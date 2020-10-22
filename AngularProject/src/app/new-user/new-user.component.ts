@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+@Component({
+  selector: 'app-new-user',
+  templateUrl: './new-user.component.html',
+  styleUrls: ['./new-user.component.scss']
+})
+export class NewUserComponent implements OnInit {
+
+  userForm : FormGroup;
+
+  constructor(private formBuilder : FormBuilder) { }
+
+  ngOnInit(): void {
+
+    this.intiForm();
+
+  }
+
+  intiForm() {
+    this.userForm = this.formBuilder.group({
+      firstName : '',
+      lastName : '',
+      email : '',
+      drinkPreference : ''
+    })
+  }
+
+}
